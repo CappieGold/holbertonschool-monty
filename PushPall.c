@@ -21,7 +21,7 @@ void push(stack_t **stack, int line_number, char *arg)
 
 	if (arg == NULL)
 	{
-		printf("L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -29,7 +29,7 @@ void push(stack_t **stack, int line_number, char *arg)
 	{
 		if (!isdigit(arg[i]) && !(i == 0 && arg[i] == '-'))
 		{
-			printf("L%d: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -40,7 +40,7 @@ void push(stack_t **stack, int line_number, char *arg)
 
 	if (!new_node)
 	{
-		perror("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
