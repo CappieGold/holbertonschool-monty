@@ -25,14 +25,10 @@ void execute_line(char *line, stack_t **stack, unsigned int line_number)
 	arg = strtok(NULL, " \n");
 
 	if (opcode == NULL)
-	{
 		return;
-	}
 
 	if (strcmp(opcode, "push") == 0)
-	{
 		push(stack, line_number, arg);
-	}
 	else if (strcmp(opcode, "pall") == 0)
 	{
 		pall(*stack);
@@ -52,6 +48,10 @@ void execute_line(char *line, stack_t **stack, unsigned int line_number)
 	else if (strcmp(opcode, "add") == 0)
 	{
 		add(stack, line_number);
+	}
+	else if (strcmp(opcode, "nop") == 0)
+	{
+		nop(stack, line_number);
 	}
 	else
 	{

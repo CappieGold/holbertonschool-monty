@@ -107,3 +107,30 @@ void add(stack_t **stack, unsigned int line_number)
 
 	*stack = temp;
 }
+
+/**
+ * nop - A no-operation function for the Monty bytecode interpreter.
+ * The 'nop' opcode is intended to have no effect when executed. It serves as a
+ * placeholder or for instructional purposes in Monty bytecode scripts. This
+ * function is called when the 'nop' opcode is encountered but does not perform
+ * any operation on the stack.
+ *
+ * @stack: Double pointer to the top of the stack.
+ *         Not used in this function but
+ *         included for consistency with other stack operations.
+ * @line_number: The current line number in the script file. Not used in this
+ *               function but included for potential
+ *               future use and error reporting.
+ * Return: Void. Since this function does not perform any operation, it has no
+ *         return value or side effects.
+ *
+ * Note: While the function does not perform any action, it is essential for
+ *       complying with the Monty bytecode specification and for ensuring that
+ *       the interpreter can process scripts containing 'nop' without errors.
+ */
+
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void) stack;
+	(void) line_number;
+}
