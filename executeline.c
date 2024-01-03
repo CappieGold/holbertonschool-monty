@@ -21,7 +21,7 @@ void execute_line(char *line, stack_t **stack, unsigned int line_number)
 	char *opcode;
 	char *arg;
 
-	opcode = strtok(line, " \n");
+	opcode = strtok(line, " \t\n");
 	arg = strtok(NULL, " \n");
 
 	if (opcode == NULL)
